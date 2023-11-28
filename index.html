@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validálás</title>
+    <style>
+        .input-error {
+            border: 2px solid red;
+        }
+        .input-validation {
+            display: block;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h3>Név</h3>
+        <label id="name-label"></label>
+        <input type="text" length="5|10" 
+        label-id="name-label" class="input-validation" required>
+
+        <h3>Email cím</h3>
+        <label id="email-label"></label>
+        <input type="email" regex="[\w\-\_\.{1,255}\@[w\-\_\.]{1,255}\.[\w]{2,8}]"
+        label-id="email-label" class="input-validation" required>
+
+        <h3>Adószám</h3>
+        <label></label>
+        <input type="text" class="input-validation">
+
+        <h3>Születési év</h3>
+        <label id="birth-year"></label>
+        <input type="number" interval="1900|"
+        label-id="birth-year-label" class="input-validation" required>
+
+        <button id="send">Beküldés</button>
+    </form>
+
+    <script src="form-validation.js"></script>
+    
+</body>
+</html>
